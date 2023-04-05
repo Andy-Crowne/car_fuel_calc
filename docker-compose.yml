@@ -12,7 +12,7 @@ services:
     volumes:
       - postgres:/var/www/car_fuel_calculator/docker-volumes/postgres
     ports:
-      - 5432:5432
+      - 5433:5432
     networks:
       - car_fuel_cal
     restart: unless-stopped

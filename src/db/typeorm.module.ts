@@ -1,3 +1,4 @@
+//import { User } from '@entities/user/user.entity';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule as NestTypeOrmModule } from '@nestjs/typeorm';
 
@@ -10,9 +11,10 @@ import { TypeOrmModule as NestTypeOrmModule } from '@nestjs/typeorm';
 			username: process.env.POSTGRES_USERNAME,
 			password: process.env.POSTGRES_PASSWORD,
 			database: process.env.POSTGRES_DATABASE,
-			entities: ['dist/enities/**/*.enitity.js'],
+			autoLoadEntities: true,
+			//entities: [__dirname + 'dist/entities/user/user.entity.js'],
 			synchronize: true,
-			migrations: ['dist/db/migrations/**/*.js'],
+			//migrations: ['dist/db/migrations/**/*.js'],
 			//cli: {migrationsDir: 'src/db/migrations'}
 		}),
 	],
